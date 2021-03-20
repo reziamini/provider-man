@@ -1,0 +1,39 @@
+{
+    "name": "rezaamini-ir/providerman",
+    "license": "MIT",
+    "description": "A provider manager for Laravel projects (especially modular projects)",
+    "authors": [
+        {
+            "name": "Reza Amini",
+            "email": "rezaaminiroyal@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "livewire/livewire": "^1.0|^2.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.7|^4.0|^5.0|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ProviderMan\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ProviderManTest\\" : "tests/"
+        }
+    },
+
+    "extra": {
+        "laravel" : {
+            "providers" : [
+                "ProviderMan\\ProviderManServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
