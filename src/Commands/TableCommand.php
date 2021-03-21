@@ -20,6 +20,11 @@ class TableCommand extends Command
             '--tag' => 'providers-migrations'
         ]);
 
+        Artisan::call('vendor:publish', [
+            '--provider' => ProviderManServiceProvider::class,
+            '--tag' => 'providers-config'
+        ]);
+
         $this->info("The migration was published, please run migration command");
     }
 }
