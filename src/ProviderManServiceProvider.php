@@ -18,10 +18,12 @@ class ProviderManServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/provider.php', 'provider');
 
-        $data = collect($this->app->make(Connection::class)->select("SELECT * FROM `providers` where `enable` = 1"));
-        foreach ($data as $item) {
-            if(class_exists($item->class)) {
-                App::register($item->class);
+        if(file_exists(config_path('provider.php'))) {
+            $data = collect($this->app->make(Connection::class)->select("SELECT * FROM `providers` where `enable` = 1"));
+            foreach ($data as $item) {
+                if (class_exists($item->class)) {
+                    App::register($item->class);
+                }
             }
         }
     }
