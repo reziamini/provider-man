@@ -8,9 +8,9 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use ProviderMan\ProviderManServiceProvider;
 
-class TableCommand extends Command
+class InstallCommand extends Command
 {
-    protected $name = 'provider:table';
+    protected $name = 'provider:install';
     protected $description = 'Publish the migration for providers';
 
     public function handle()

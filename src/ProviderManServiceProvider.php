@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use ProviderMan\Commands\TableCommand;
+use ProviderMan\Commands\InstallCommand;
 use ProviderMan\Http\Livewire\Create;
 use ProviderMan\Http\Livewire\Read;
 use ProviderMan\Http\Livewire\Single;
@@ -46,7 +46,7 @@ class ProviderManServiceProvider extends ServiceProvider
 
         if($this->app->runningInConsole()){
             $this->commands([
-                TableCommand::class,
+                InstallCommand::class,
             ]);
         }
 
