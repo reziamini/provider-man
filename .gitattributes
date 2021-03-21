@@ -4,5 +4,6 @@
 phpunit.xml.dist export-ignore
 *.css linguist-vendored
 *.scss linguist-vendored
+*.blade.php linguist-vendored
 *.less linguist-vendored
 *.js linguist-vendored
