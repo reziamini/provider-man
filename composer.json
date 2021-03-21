@@ -1,7 +1,7 @@
 {
-    "name": "rezaamini-ir/providerman",
+    "name": "rezaamini-ir/provider-man",
     "license": "MIT",
-    "description": "A provider manager for Laravel projects (especially modular projects)",
+    "description": "A service provider manager for Laravel projects (especially modular projects)",
     "authors": [
         {
             "name": "Reza Amini",
