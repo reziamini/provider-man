@@ -5,6 +5,7 @@ namespace ProviderMan;
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use ProviderMan\Commands\InstallCommand;
@@ -18,8 +19,9 @@ class ProviderManServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/provider.php', 'provider');
 
-        if(file_exists(config_path('provider.php'))) {
-            $data = collect($this->app->make(Connection::class)->select("SELECT * FROM `providers` where `enable` = 1"));
+        if(Schema::hasTable('providers')) {
+            $connection = $this->app->make(Connection::class);
+            $data = $connection->table('providers')->select()->get();
             foreach ($data as $item) {
                 if (class_exists($item->class)) {
                     App::register($item->class);
