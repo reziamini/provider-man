@@ -1,9 +1,9 @@
-#Provider Man
+# Provider Man
 With Provider Man package you will be able to manage your custom providers in a beautiful UI and manage your module service providers.
 
 ![Provider Man](https://aminireza.ir/provider.png)
 
-##Installation
+## Installation
 
 To install the package you have to run composer command:
 ```bash
