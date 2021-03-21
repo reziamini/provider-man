@@ -30,14 +30,19 @@ class ProviderManServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'provider');
 
-        Route::middleware('web')
+        $array = array_merge(['web'], config('provider.middleware'));
+        Route::middleware($array)
             ->name('provider.')
-            ->prefix('provider')
+            ->prefix(config('provider.route'))
             ->group(__DIR__.'/routes.php');
 
         $this->publishes([
             __DIR__.'/../database/migrations' => database_path('migrations')
         ], 'providers-migrations');
+
+        $this->publishes([
+            __DIR__.'/config' => config_path()
+        ], 'providers-config');
 
         if($this->app->runningInConsole()){
             $this->commands([
