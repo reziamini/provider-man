@@ -3,7 +3,8 @@ With Provider Man package you will be able to manage your custom providers in a 
 
 ![Provider Man](https://aminireza.ir/provider.png)
 
-#Installation
+##Installation
+
 To install the package you have to run composer command:
 ```bash
 composer require rezaamini-ir/provider-man
@@ -15,6 +16,7 @@ php artisan provider:install
 Congrats! Provider man has been installed.
 
 ## Usage
+
 You will be able to use the package in the `/provider` address.
 This address and middleware of this route can be managed in config file which has been stored in `config/provider.php`,
 
